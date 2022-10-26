@@ -6,7 +6,7 @@ import type {
 } from "@reduxjs/toolkit/query";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "http://localhost:3001",
+  baseUrl: import.meta.env.VITE_API,
   prepareHeaders: (headers) => {
     headers.set("Accept", "application/json");
     headers.set("Content-Type", "application/json");
