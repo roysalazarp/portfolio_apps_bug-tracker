@@ -1,0 +1,14 @@
+name: cicd
+on: 
+  push: 
+    branches: 
+      - 'main'
+
+jobs: 
+  test:
+    name: run unit tests
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v3
+      - name: unit test frontend and backend code
+        run: docker compose -f docker-compose.test.yml up --build
