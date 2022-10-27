@@ -23,6 +23,17 @@ services:
     env_file:
       - ./env/frontend/development.env
     container_name: frontend
+  frontend-test:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev.test
+    volumes:
+      - ./frontend/src:/app/src
+      - /app/node_modules
+    restart: on-failure
+    env_file:
+      - ./env/frontend/development.env
+    container_name: frontend-test
   backend:
     build:
       context: ./backend
@@ -32,5 +43,16 @@ services:
       - /app/node_modules
     restart: on-failure
     container_name: backend
+    env_file:
+      - ./env/backend/development.env
+  backend-test:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev.test
+    volumes:
+      - ./backend/src:/app/src
+      - /app/node_modules
+    restart: on-failure
+    container_name: backend-test
     env_file:
       - ./env/backend/development.env
