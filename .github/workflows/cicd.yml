@@ -9,6 +9,18 @@ jobs:
     name: run unit tests
     runs-on: ubuntu-latest
     steps: 
-      - uses: actions/checkout@v3
+      - name: checkout
+        uses: actions/checkout@v3
+
       - name: unit test frontend and backend code
-        run: docker compose -f docker-compose.test.yml up --build
+        id: unit_test
+        run: | 
+          chmod +x ./docker-compose.test.sh
+          ./docker-compose.test.sh
+          echo "$?"
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}

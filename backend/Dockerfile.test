@@ -4,4 +4,6 @@ COPY package.json ./
 COPY yarn.lock ./
 RUN yarn install 
 COPY . .
-CMD ["yarn", "test"]
+RUN ["chmod", "+x", "/app/entrypoint.sh"]
+ENTRYPOINT [ "./entrypoint.sh" ]
+# CMD ["yarn", "test"]

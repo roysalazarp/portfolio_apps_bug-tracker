@@ -6,7 +6,7 @@ if (import.meta.vitest) {
   const { describe, expect, it } = import.meta.vitest;
   describe("sum", () => {
     it("return sum of all numbers", () => {
-      expect(sum(1, 2, 3, 1)).toBe(7);
+      expect(sum(1, 2, 3)).toBe(6);
     });
   });
 }
