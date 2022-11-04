@@ -1,5 +1,7 @@
 node_modules
+dist
 .gitignore
 Dockerfile
 Dockerfile.dev
-dist
+Dockerfile.dev.test
+Dockerfile.test

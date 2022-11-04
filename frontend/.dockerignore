@@ -1,6 +1,7 @@
 node_modules
 dist
-nginx
 .gitignore
 Dockerfile
 Dockerfile.dev
+Dockerfile.dev.test
+Dockerfile.test

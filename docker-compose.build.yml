@@ -1,19 +1,21 @@
-# Runs docker images from docker hub repository.
+# Builds docker images.
 version: "3.3"
 services:
   nginx:
     image: roysalazarportilla/bug-tracker-nginx:latest
-    depends_on:
-      - frontend
-      - backend
-    restart: always
-    ports:
-      - '80:80'
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    container_name: nginx
   frontend:
     image: roysalazarportilla/bug-tracker-frontend:latest
-    restart: on-failure
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     container_name: frontend
   backend:
     image: roysalazarportilla/bug-tracker-backend:latest
-    restart: on-failure
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     container_name: backend
