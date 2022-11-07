@@ -54,6 +54,7 @@ The project didn't quite succeed but from this adventure, I became full stack de
 
 ## Docs
 - [How to run this project locally](docs/run-locally.md)
+- [CI/CD for this project](docs/cicd.md)
 
 ## License
 License - [MIT](https://choosealicense.com/licenses/mit/)
