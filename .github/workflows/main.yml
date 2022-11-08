@@ -5,7 +5,7 @@ on:
       - 'main'
 
 jobs: 
-  test:
+  cicd:
     name: CI/CD
     runs-on: ubuntu-latest
     steps: 
@@ -14,8 +14,8 @@ jobs:
 
       - name: Run unit tests
         run: | 
-          chmod +x ./docker-compose.test.sh
-          ./docker-compose.test.sh
+          chmod +x ./test.sh
+          ./test.sh
 
       - name: Login to Docker Hub
         uses: docker/login-action@v2
@@ -25,5 +25,5 @@ jobs:
 
       - name: Push containers to Docker Hub
         run: | 
-          chmod +x ./docker-compose.deploy.sh
-          ./docker-compose.deploy.sh
+          chmod +x ./deploy.sh
+          ./deploy.sh
