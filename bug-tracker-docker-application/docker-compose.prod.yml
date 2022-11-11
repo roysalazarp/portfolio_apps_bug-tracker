@@ -12,8 +12,14 @@ services:
   frontend:
     image: roysalazarportilla/bug-tracker-frontend:latest
     restart: on-failure
+    # Location of env variables in Ubuntu server
+    env_file:
+      - /etc/environment
     container_name: frontend
   backend:
     image: roysalazarportilla/bug-tracker-backend:latest
     restart: on-failure
+    # Location of env variables in Ubuntu server
+    env_file:
+      - /etc/environment
     container_name: backend

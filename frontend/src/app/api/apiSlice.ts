@@ -5,8 +5,12 @@ import type {
   FetchBaseQueryError,
 } from "@reduxjs/toolkit/query";
 
+const API = import.meta.env.PROD
+  ? "http://3.120.216.190/api"
+  : import.meta.env.VITE_API;
+
 const baseQuery = fetchBaseQuery({
-  baseUrl: import.meta.env.VITE_API,
+  baseUrl: API,
   prepareHeaders: (headers) => {
     headers.set("Accept", "application/json");
     headers.set("Content-Type", "application/json");

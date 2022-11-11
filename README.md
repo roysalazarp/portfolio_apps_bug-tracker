@@ -3,7 +3,7 @@
 This project is a web based bug tracker system (similar to [Jira by Atlassian](https://www.atlassian.com/software/jira)) whose purpose is to show tech recruiters my technical skills for possible job opportunities.
 
 ## Demo
-You can play with this project at [roysalazarbugtracker.dev](https://roysalazarbugtracker.dev) (and see the roadman [here](https://jira.external-share.com/issue/43460/bug_tracker_board?groupBy=EPIC)).
+You can play with this project at [roysalazar.dev](http://3.120.216.190/) (and see the roadman [here](https://jira.external-share.com/issue/43460/bug_tracker_board?groupBy=EPIC)).
 
 ## 👨🏽‍💻 About Me
 
