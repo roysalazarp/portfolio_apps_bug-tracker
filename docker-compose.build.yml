@@ -19,3 +19,9 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     container_name: backend
+  database:
+    image: roysalazarportilla/bug-tracker-database:latest
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    container_name: database

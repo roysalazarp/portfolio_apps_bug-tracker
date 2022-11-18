@@ -21,7 +21,7 @@ services:
       - /app/node_modules
     restart: on-failure
     env_file:
-      - ./env/frontend/development.env
+      - ./dev-env/frontend.env
     container_name: frontend
   frontend-test:
     build:
@@ -32,9 +32,11 @@ services:
       - /app/node_modules
     restart: on-failure
     env_file:
-      - ./env/frontend/development.env
+      - ./dev-env/frontend.env
     container_name: frontend-test
   backend:
+    depends_on:
+      - database
     build:
       context: ./backend
       dockerfile: Dockerfile.dev
@@ -44,7 +46,8 @@ services:
     restart: on-failure
     container_name: backend
     env_file:
-      - ./env/backend/development.env
+      - ./dev-env/backend.env
+      - ./dev-env/database.env
   backend-test:
     build:
       context: ./backend
@@ -55,4 +58,17 @@ services:
     restart: on-failure
     container_name: backend-test
     env_file:
-      - ./env/backend/development.env
+      - ./dev-env/backend.env
+  database:
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - '5432:5432'
+    # Persist db data
+    volumes:
+      - ./database/pgdata:/var/lib/postgresql/data
+    container_name: database
+    env_file:
+      - ./dev-env/database.env

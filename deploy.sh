@@ -8,3 +8,4 @@ docker compose -f docker-compose.build.yml build
 docker push roysalazarportilla/bug-tracker-nginx:latest
 docker push roysalazarportilla/bug-tracker-frontend:latest
 docker push roysalazarportilla/bug-tracker-backend:latest
+docker push roysalazarportilla/bug-tracker-database:latest

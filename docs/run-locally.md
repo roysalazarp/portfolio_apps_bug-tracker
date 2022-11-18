@@ -30,9 +30,9 @@ Prerequisites, install:
   - backend/dockerfile.dev - Container port 3000
   - nginx/dockerfile.dev - Container port 80
     - configs/defaults.conf - Traffic forwarding to respective Container ports
-  - env
-    - backend/development.env - Sets env variables for container 
-    - frontend/development.env - Sets env variables for container 
+  - env-dev
+    - backend.env - Sets env variables for container 
+    - frontend.env - Sets env variables for container 
 
 ## Environment Variables
 Env variables are found in bug-tracker/env folder. 

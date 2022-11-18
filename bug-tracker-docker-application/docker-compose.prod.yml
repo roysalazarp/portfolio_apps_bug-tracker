@@ -12,14 +12,21 @@ services:
   frontend:
     image: roysalazarportilla/bug-tracker-frontend:latest
     restart: on-failure
-    # Location of env variables in Ubuntu server
     env_file:
       - /etc/environment
     container_name: frontend
   backend:
     image: roysalazarportilla/bug-tracker-backend:latest
     restart: on-failure
-    # Location of env variables in Ubuntu server
     env_file:
       - /etc/environment
     container_name: backend
+  database:
+    image: roysalazarportilla/bug-tracker-database:latest
+    restart: on-failure
+    # Persist db data
+    volumes:
+      - ./database/pgdata:/var/lib/postgresql/data
+    env_file:
+      - /etc/environment
+    container_name: database
