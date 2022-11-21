@@ -15,7 +15,7 @@ const slice = createSlice({
   initialState,
   reducers: {
     setTestData(state, { payload }: PayloadAction<FetchTest["response"]>) {
-      state.value = payload.testData + " world";
+      state.value = payload.testData;
     },
   },
 });

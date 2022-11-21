@@ -22,7 +22,8 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
-    "types": ["vitest/importMeta"]
+    "types": ["vitest/importMeta"],
+    "strict": true
   },
   "ts-node": {
     "esm": true,

@@ -4,13 +4,19 @@ export interface FetchTest {
   response: {
     testData: string;
   };
-  payload: void;
+  payload: {
+    testInput: string;
+  };
 }
 
 export const extendedApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getDummyData: builder.query<FetchTest["response"], FetchTest["payload"]>({
-      query: () => "",
+      query: (payload) => ({
+        url: "",
+        method: "GET",
+        params: payload,
+      }),
     }),
   }),
 });

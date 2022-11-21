@@ -4,7 +4,7 @@ import { setTestData, selectTestData } from "../app/slices/test";
 import { useGetDummyDataQuery } from "../app/slices/dummyDataSlice";
 
 const HomePage: React.FC = () => {
-  const { data } = useGetDummyDataQuery();
+  const { data } = useGetDummyDataQuery({ testInput: "hello" });
 
   const testData = useAppSelector(selectTestData);
   const dispatch = useAppDispatch();
