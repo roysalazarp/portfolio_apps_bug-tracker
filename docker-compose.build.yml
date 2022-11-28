@@ -2,25 +2,25 @@
 version: "3.3"
 services:
   nginx:
-    image: roysalazarportilla/bug-tracker-nginx:latest
+    image: roysalazarportilla/portfolio_bug-tracker_nginx:latest
     build:
       dockerfile: Dockerfile
       context: ./nginx
     container_name: nginx
   frontend:
-    image: roysalazarportilla/bug-tracker-frontend:latest
+    image: roysalazarportilla/portfolio_bug-tracker_frontend:latest
     build:
       context: ./frontend
       dockerfile: Dockerfile
     container_name: frontend
   backend:
-    image: roysalazarportilla/bug-tracker-backend:latest
+    image: roysalazarportilla/portfolio_bug-tracker_backend:latest
     build:
       context: ./backend
       dockerfile: Dockerfile
     container_name: backend
   database:
-    image: roysalazarportilla/bug-tracker-database:latest
+    image: roysalazarportilla/portfolio_bug-tracker_database:latest
     build:
       context: ./database
       dockerfile: Dockerfile

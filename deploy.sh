@@ -5,7 +5,7 @@ set -e
 docker compose -f docker-compose.build.yml build
 
 # Push builds to docker hub
-docker push roysalazarportilla/bug-tracker-nginx:latest
-docker push roysalazarportilla/bug-tracker-frontend:latest
-docker push roysalazarportilla/bug-tracker-backend:latest
-docker push roysalazarportilla/bug-tracker-database:latest
+docker push roysalazarportilla/portfolio_bug-tracker_nginx:latest
+docker push roysalazarportilla/portfolio_bug-tracker_frontend:latest
+docker push roysalazarportilla/portfolio_bug-tracker_backend:latest
+docker push roysalazarportilla/portfolio_bug-tracker_database:latest
