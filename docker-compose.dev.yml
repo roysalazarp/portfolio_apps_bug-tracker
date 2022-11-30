@@ -1,17 +1,5 @@
 version: "3.3"
 services:  
-  nginx:
-    depends_on:
-      - frontend
-      - backend
-    restart: always
-    build:
-      dockerfile: Dockerfile
-      context: ./nginx
-    volumes:
-      - ./nginx/configs/default.conf:/etc/nginx/conf.d/default.conf
-    ports:
-      - '80:80'
   frontend:
     build:
       context: ./frontend
@@ -23,6 +11,8 @@ services:
     env_file:
       - ./dev-env/frontend.env
     container_name: frontend
+    networks:
+      - portfolio-network
   frontend-test:
     build:
       context: ./frontend
@@ -48,6 +38,8 @@ services:
     env_file:
       - ./dev-env/backend.env
       - ./dev-env/database.env
+    networks:
+      - portfolio-network
   backend-test:
     build:
       context: ./backend
@@ -70,3 +62,8 @@ services:
     container_name: database
     env_file:
       - ./dev-env/database.env
+    networks:
+      - portfolio-network
+networks:
+  portfolio-network:
+    external: true

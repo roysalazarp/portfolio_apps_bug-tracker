@@ -5,9 +5,7 @@ import type {
   FetchBaseQueryError,
 } from "@reduxjs/toolkit/query";
 
-const API = import.meta.env.PROD
-  ? "http://3.120.216.190/api"
-  : import.meta.env.VITE_API;
+const API = "http://3.76.1.136/app/bug-tracker/api";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: API,
