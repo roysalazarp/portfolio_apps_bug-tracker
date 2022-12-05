@@ -1,5 +1,5 @@
 import sum from "./sum";
-import { expect, describe, it } from "vitest";
+import { describe, expect, it } from "vitest";
 
 describe("sum", () => {
   it("return sum of all numbers", () => {

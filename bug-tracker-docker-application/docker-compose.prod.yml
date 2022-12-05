@@ -1,6 +1,12 @@
 # Runs docker images from docker hub repository.
 version: "3.3"
 services:
+  nginx-frontend:
+    image: roysalazarportilla/portfolio_bug-tracker_nginx-frontend:latest
+    restart: on-failure
+    container_name: nginx-frontend
+    networks:
+      - portfolio-network
   frontend:
     image: roysalazarportilla/portfolio_bug-tracker_frontend:latest
     restart: on-failure

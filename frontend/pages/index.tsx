@@ -1,9 +1,9 @@
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { useEffect } from "react";
-import { setTestData, selectTestData } from "../app/slices/test";
-import { useGetDummyDataQuery } from "../app/slices/dummyDataSlice";
+import { setTestData, selectTestData } from "../store/slices/test";
+import { useGetDummyDataQuery } from "../store/slices/dummyDataSlice";
 
-const HomePage: React.FC = () => {
+export default function Home() {
   const { data } = useGetDummyDataQuery({ testInput: "hello" });
 
   const testData = useAppSelector(selectTestData);
@@ -20,6 +20,4 @@ const HomePage: React.FC = () => {
       <div>{testData}</div>
     </div>
   );
-};
-
-export default HomePage;
+}

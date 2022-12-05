@@ -5,7 +5,11 @@ import type {
   FetchBaseQueryError,
 } from "@reduxjs/toolkit/query";
 
-const API = "http://3.76.1.136/app/bug-tracker/api";
+// TODO: Check why http://backend:3001 doesn't work!
+const API =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3001"
+    : "http://3.76.1.136/app/bug-tracker/api";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: API,

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction, createSelector } from "@reduxjs/toolkit";
-import { RootState } from "../store";
+import { RootState } from "../index";
 import { FetchTest } from "./dummyDataSlice";
 
 interface TestState {

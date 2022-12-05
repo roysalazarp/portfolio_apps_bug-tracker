@@ -1,12 +1,10 @@
-FROM node as build 
-WORKDIR /app
-COPY package.json ./
-COPY yarn.lock ./
-RUN yarn install 
-COPY . .
-RUN yarn build
-
-FROM nginx 
+FROM node:alpine
+WORKDIR /usr/app
+RUN npm install --global pm2
+COPY ./package.json ./
+RUN npm install --production
+COPY ./ ./
+RUN npm run build
 EXPOSE 3000
-COPY --from=build /app/nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/dist /usr/share/nginx/html
+USER node
+CMD [ "pm2-runtime", "start", "npm", "--", "start" ]

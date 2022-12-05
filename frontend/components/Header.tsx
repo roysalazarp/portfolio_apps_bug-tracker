@@ -1,18 +1,14 @@
-import { Link } from "react-router-dom";
-
-const Header: React.FC = () => {
+export default function Header() {
   return (
     <header>
       <h1>Bug Tracker</h1>
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <a href="/">Home</a>
           </li>
         </ul>
       </nav>
     </header>
   );
-};
-
-export default Header;
+}

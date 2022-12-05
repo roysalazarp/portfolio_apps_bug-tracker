@@ -8,9 +8,11 @@ import { testSchema } from "./schemas/test.schema";
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors({
-  origin: process.env.CLIENT
-}));
+app.use(
+  cors({
+    origin: process.env.NODE_ENV === "development" ? "*" : process.env.CLIENT,
+  })
+);
 
 app.use(cookieParser());
 
@@ -36,5 +38,5 @@ app.get("/", validateResource(testSchema), (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
-  swaggerDocs(app)
+  swaggerDocs(app);
 });

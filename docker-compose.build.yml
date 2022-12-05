@@ -1,6 +1,12 @@
 # Builds docker images.
 version: "3.3"
 services:
+  nginx-frontend:
+    image: roysalazarportilla/portfolio_bug-tracker_nginx-frontend:latest
+    build:
+      context: ./frontend/nginx
+      dockerfile: Dockerfile
+    container_name: nginx-frontend
   frontend:
     image: roysalazarportilla/portfolio_bug-tracker_frontend:latest
     build:
