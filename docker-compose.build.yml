@@ -1,27 +1,27 @@
 # Builds docker images.
 version: "3.3"
 services:
-  nginx-frontend:
+  portfolio_bug-tracker_nginx-frontend:
     image: roysalazarportilla/portfolio_bug-tracker_nginx-frontend:latest
     build:
       context: ./frontend/nginx
       dockerfile: Dockerfile
-    container_name: nginx-frontend
-  frontend:
+    container_name: portfolio_bug-tracker_nginx-frontend
+  portfolio_bug-tracker_frontend:
     image: roysalazarportilla/portfolio_bug-tracker_frontend:latest
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: frontend
-  backend:
+    container_name: portfolio_bug-tracker_frontend
+  portfolio_bug-tracker_backend:
     image: roysalazarportilla/portfolio_bug-tracker_backend:latest
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: backend
-  database:
+    container_name: portfolio_bug-tracker_backend
+  portfolio_bug-tracker_database:
     image: roysalazarportilla/portfolio_bug-tracker_database:latest
     build:
       context: ./database
       dockerfile: Dockerfile
-    container_name: database
+    container_name: portfolio_bug-tracker_database

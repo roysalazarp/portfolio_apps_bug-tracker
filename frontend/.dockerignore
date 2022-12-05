@@ -1,5 +1,5 @@
 node_modules
-dist
+.next
 .gitignore
 Dockerfile
 Dockerfile.dev

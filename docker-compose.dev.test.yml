@@ -1,6 +1,6 @@
 version: "3.3"
 services:  
-  frontend-test:
+  portfolio_bug-tracker_frontend-test:
     build:
       context: ./frontend
       dockerfile: Dockerfile.dev.test
@@ -10,8 +10,8 @@ services:
     restart: always
     env_file:
       - ./dev-env/frontend.env
-    container_name: frontend-test
-  backend-test:
+    container_name: portfolio_bug-tracker_frontend-test
+  portfolio_bug-tracker_backend-test:
     build:
       context: ./backend
       dockerfile: Dockerfile.dev.test
@@ -19,6 +19,6 @@ services:
       - ./backend/src:/app/src
       - /app/node_modules
     restart: always
-    container_name: backend-test
+    container_name: portfolio_bug-tracker_backend-test
     env_file:
       - ./dev-env/backend.env

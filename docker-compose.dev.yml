@@ -1,6 +1,6 @@
 version: "3.3"
 services:  
-  nginx:
+  portfolio_bug-tracker_nginx:
     restart: always
     build:
       dockerfile: Dockerfile
@@ -9,10 +9,10 @@ services:
       - ./nginx/configs/default.conf:/etc/nginx/conf.d/default.conf
     ports:
       - '80:80'
-    container_name: nginx
+    container_name: portfolio_bug-tracker_nginx
     networks:
       - portfolio-network
-  frontend:
+  portfolio_bug-tracker_frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile.dev
@@ -25,10 +25,10 @@ services:
     restart: on-failure
     env_file:
       - ./dev-env/frontend.env
-    container_name: frontend
+    container_name: portfolio_bug-tracker_frontend
     networks:
       - portfolio-network
-  backend:
+  portfolio_bug-tracker_backend:
     depends_on:
       - database
     build:
@@ -40,13 +40,13 @@ services:
       - ./backend/src:/app/src
       - /app/node_modules
     restart: on-failure
-    container_name: backend
+    container_name: portfolio_bug-tracker_backend
     env_file:
       - ./dev-env/backend.env
       - ./dev-env/database.env
     networks:
       - portfolio-network
-  database:
+  portfolio_bug-tracker_database:
     build:
       context: ./database
       dockerfile: Dockerfile
@@ -54,7 +54,7 @@ services:
     # Persist db data
     volumes:
       - ./database/pgdata:/var/lib/postgresql/data
-    container_name: database
+    container_name: portfolio_bug-tracker_database
     env_file:
       - ./dev-env/database.env
     networks:

@@ -1,10 +1,10 @@
 version: "3.3"
 services:  
-  frontend-unit-tests:
+  portfolio_bug-tracker_frontend-unit-tests:
     build:
       context: ./frontend
       dockerfile: Dockerfile.test
-  backend-unit-tests:
+  portfolio_bug-tracker_backend-unit-tests:
     build:
       context: ./backend
       dockerfile: Dockerfile.test
