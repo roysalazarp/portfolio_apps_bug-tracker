@@ -3,17 +3,7 @@
 This project is a web based bug tracker system (similar to [Jira by Atlassian](https://www.atlassian.com/software/jira)) whose purpose is to show tech recruiters my technical skills for possible job opportunities.
 
 ## Demo
-You can play with this project at [roysalazar.dev](http://3.120.216.190/) (and see the roadman [here](https://jira.external-share.com/issue/43460/bug_tracker_board?groupBy=EPIC)).
-
-## 👨🏽‍💻 About Me
-
-Hi there! I am Roy.
-
-I studied design at university and fell in love with 3D graphics. While working with 3D I came up with the idea of a "virtual sets marketplace" for filmmakers, but it would require me to learn to code, so I did.
-
-The project didn't quite succeed but from this adventure, I became full stack developer in love with the idea of understanding problems and turning them into products.
-
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roy-salazar-a93b0b192/)
+You can play with this project at [roysalazar.dev/app/bug-tracker](http://3.76.1.136/app/bug-tracker) (and see the roadman [here](https://jira.external-share.com/issue/43460/bug_tracker_board?groupBy=EPIC)).
 
 ## What skills do I present in this project?
 ### Best practices
@@ -50,7 +40,10 @@ The project didn't quite succeed but from this adventure, I became full stack de
 
 
 ### CI/CD & Cloud
-**Docker | Github Actions | AWS Services (S3, Elastic Beanstalk, IAM, Route 53 and others)**
+**Docker | Github Actions | AWS Services (EC2, Elastic IP and S3)**
+
+## Architecture
+![App Screenshot](./portfolio_architecture.png)
 
 ## Docs
 - [How to run this project locally](docs/run-locally.md)
