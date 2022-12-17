@@ -28,7 +28,7 @@ services:
       - portfolio-network
   portfolio_bug-tracker_backend:
     depends_on:
-      - database
+      - portfolio_bug-tracker_database
     build:
       context: ./backend
       dockerfile: Dockerfile.dev
